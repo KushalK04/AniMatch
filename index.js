@@ -4,6 +4,7 @@ import bcrypt from "bcrypt";
 import flash from 'express-flash';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
+import axios from "axios";
 
 const app = express();
 const port = 3000;
@@ -13,7 +14,6 @@ app.use(express.static("public"));
 app.use(cookieParser('secret'));
 app.use(session({ cookie: { maxAge: 60000 }}));
 app.use(flash());
-
 
 const db = new pg.Client({
   user: "postgres",
@@ -57,7 +57,7 @@ app.post("/register", async (req, res) => {
         [email, hashedPassword] 
       );
       console.log(result);
-      res.render("main.ejs");
+      res.redirect("/login");
     }
   } catch (err) {
     console.log(err);
@@ -80,7 +80,14 @@ app.post("/login", async (req, res) => {
 
       const passwordMatch = await bcrypt.compare(password, storedPassword); 
       if (passwordMatch) {
-        res.render("main.ejs");
+        try {
+          const response = await axios.get('https://kitsu.io/api/edge/anime');
+          const animeData = response.data.data;
+          res.render('main', { animeData });
+        } catch (error) {
+          console.error('Error fetching anime data:', error);
+          res.status(500).send('An error occurred while fetching anime data.');
+        }
       } else {
         req.flash('error', 'Incorrect Password');
         res.redirect('/login');
@@ -93,6 +100,17 @@ app.post("/login", async (req, res) => {
     console.log(err);
     req.flash('error', 'An error occurred');
     res.redirect('/login');
+  }
+});
+
+app.get("/anime", async (req, res) => {
+  try {
+      const response = await axios.get('https://kitsu.io/api/edge/anime');
+      const animeData = response.data.data;
+      res.render('main', { animeData });
+  } catch (error) {
+      console.error('Error fetching anime data:', error);
+      res.status(500).send('An error occurred while fetching anime data.');
   }
 });
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1 class="idek">Login</h1>
+    <div>
+      <div>
+        <div>
+          <div>
+            <form action="/login" method="POST">
+              <div>
+                <label for="email">Email</label>
+                <input type="email" name="username">
+              </div>
+              <div>
+                <label for="password">Password</label>
+                <input type="password" name="password">
+              </div>
+              <button type="submit">Login</button>
+            </form>
+            <% if (error) { %>
+              <p><%= error %></p>
+            <% } %>
+            <button onclick="window.location.href='/'">Register Instead</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

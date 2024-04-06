@@ -1,5 +1,5 @@
 # AniMatch
-AniMatch is an application designed for all anime lovers. AniMatch helps users find new shows by giving anime reccomendations and allowing them to search for new shows.
+AniMatch is an application designed for all anime lovers. AniMatch helps users find new shows by giving anime reccomendations and allowing them to search for new shows. AniMatch uses a number of technologies to function. A majority of the functionallity can be found in index.js. The index.js file sets up an Express server handling user registration and login functionalities, along with fetching and displaying anime data from an Kitsu API. It contains middleware for form data handling, session management, and cookie parsing. Database connectivity with PostgreSQL is established, enabling user data storage. The server listens on port 3000, rendering EJS templates for different routes, handling registration and login requests, and fetching anime data upon request.
 
 ## By
 Kushal Kumar |

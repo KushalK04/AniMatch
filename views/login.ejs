@@ -128,17 +128,17 @@
             <label for="password">Password</label>
             <input type="password" name="password">
           </div>
+          <div class="buttons">
+            <button class="register-button" onclick="window.location.href='/'">Sign up</button>
+          </div>
         </form>
-
-        <div class="buttons">
+        <% if (error) { %>
+          <p>
+            <%= error %>
+          </p>
+          <% } %>
           <button class="login-button" type="submit">Login</button>
-          <% if (error) { %>
-            <p>
-              <%= error %>
-            </p>
-            <% } %>
-          <button class="register-button" onclick="window.location.href='/'">Sign up</button>
-        </div>
+
         
       </div>
     </div>

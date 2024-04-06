@@ -130,15 +130,15 @@
           <label for="password">Password</label>
           <input type="password" name="password">
         </div>
+        <div class="buttons">
+          <button class="register-button" type="submit">Register</button>
+        </div>
       </form>
-
-      <div class="buttons">
-        <button class="register-button" type="submit">Register</button>
         <% if (error) { %>
           <p><%= error %></p>
         <% } %>
-        <button class="login-button" onclick="window.location.href='/'">Login Instead</button>
-      </div>
+      <button class="login-button" onclick="window.location.href='/'">Login Instead</button>
+      
     </div>
   </div>
 </body>

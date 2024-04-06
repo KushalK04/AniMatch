@@ -7,4 +7,8 @@ Olivia Fong |
 Jesse Welk |
 Patrick Hui
 
+## API Used
+
+[KitsuAPI](https://kitsu.docs.apiary.io/#)
+
 ## How To Run

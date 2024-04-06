@@ -1,44 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-  <div>
-    <h1 class="idek">Login</h1>
-    <div>
-      <div>
-        <div>
-          <div>
-            <form action="/login" method="POST">
-              <div>
-                <label for="email">Email</label>
-                <input type="email" name="username">
-              </div>
-              <div>
-                <label for="password">Password</label>
-                <input type="password" name="password">
-              </div>
-              <button type="submit">Login</button>
-            </form>
-            <% if (error) { %>
-              <p><%= error %></p>
-            <% } %>
-            <button onclick="window.location.href='/'">Register Instead</button>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+
+      *{
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: white;
+        color: black;
+        font-family: Arial, sans-serif;
+        height: 100vh;
+      }
+
+      h1{
+        font-size: 64px;
+      }
+
+      h2{
+        font-size: 48;
+      }
+
+      h3{
+        font-size: 32px;
+      }
+
+      p{
+        font-size: 18px;
+      }
+
+      label{
+        font-weight: 600;
+      }
+
+      input{
+        padding: 10px;
+      }
+
+      form{
+        margin-bottom: 2rem;
+      }
+
+      .login-button {
+        color: #000;
+        text-align: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        border-radius: 6px;
+        background: #FFF;
+        display: flex;
+        padding: 8px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+        border: 1px solid #000;
+      }
+
+      .register-button {
+        color: #FFF;
+        text-align: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        border-radius: 6px;
+        background: #000;
+        display: flex;
+        padding: 8px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+        border: none;
+      }
+
+      .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: left;
+        margin-bottom: 20px;
+      } 
+
+      .container {
+        display: flex;
+        width: 300px;
+        flex-direction: column;
+        padding: 2rem;
+        border-radius: 10px;
+        border: 1px solid #39393A;
+      }
+
+
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+      }
+
+      .heading {
+        margin-bottom: 2rem;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <h1 class="heading">Login</h1>
+
+        <form action="/login" method="POST">
+          <div class="inputs">
+            <label for="email">Email</label>
+            <input type="email" name="username">
           </div>
+          <div class="inputs">
+            <label for="password">Password</label>
+            <input type="password" name="password">
+          </div>
+        </form>
+
+        <div class="buttons">
+          <button class="login-button" type="submit">Login</button>
+          <% if (error) { %>
+            <p>
+              <%= error %>
+            </p>
+            <% } %>
+          <button class="register-button" onclick="window.location.href='/'">Sign up</button>
         </div>
+        
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

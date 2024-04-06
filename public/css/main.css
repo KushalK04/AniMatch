@@ -1,0 +1,97 @@
+@font-face {
+  font-family: "Hexaframe CF";
+  src: url("/fonts/HexaframeCF-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
+body {
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+h1 {
+  font-family: "Hexaframe CF", sans-serif;
+  font-size: 4rem;
+  text-align: center;
+  width: 70%;
+  margin: 1rem auto;
+}
+
+h2 {
+  font-family: "Hexaframe CF", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1.125rem;
+  color: #1D1D1D;
+}
+
+.description {
+  font-size: 1.125rem;
+  color: #1d1d1d;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.anime-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.anime-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 0.5px solid #dfdfdf;
+}
+
+.anime-card h2 {
+  color: #333;
+  text-align: center;
+}
+
+.anime-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .anime-card {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  h1 {
+    padding: 0 10px;
+  }
+
+  .explore-button, .signup-button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+  }
+}
+
+.anime-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}

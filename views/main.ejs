@@ -4,31 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AniMatch</title>
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-  <div>
-    <%- include('navbar') %>
-    <h1>Discover Your Favorite Anime on AniMatch</h1>
-    <p>Welcome to AniMatch, the ultimate destination for anime lovers. Explore our vast collection, get personalized recommendations, and connect with a vibrant community of fellow fans.</p>
-    <button>Explore</button>
-    <button>Sign Up</button>
+  <%- include('navbar') %>
+  <h1>Discover Your Favorite Anime on AniMatch</h1>
+  <p class="description">Welcome to AniMatch, the ultimate destination for anime lovers. Explore our vast collection, get personalized recommendations, and connect with a vibrant community of fellow fans.</p>
+
+  <div class="anime-cards-container">
+    <% if (animeData && animeData.length > 0) { %>
+      <% animeData.forEach(anime => { %>
+        <div class="anime-card">
+          <h2><%= anime.attributes.canonicalTitle %></h2>
+          <p><strong>Age Rating:</strong> <%= anime.attributes.ageRating %></p>
+          <p><strong>Age Rating Guide:</strong> <%= anime.attributes.ageRatingGuide %></p>
+          <img src="<%= anime.attributes.posterImage.original %>" alt="Poster Image">
+          <p><%= anime.attributes.synopsis %></p>
+        </div>
+      <% }); %>
+    <% } else { %>
+      <p>No anime data available.</p>
+    <% } %>
   </div>
 
-  <% if (animeData && animeData.length > 0) { %>
-    <% animeData.forEach(anime => { %>
-      <div>
-        <h2><%= anime.attributes.canonicalTitle %></h2>
-        <p><strong>Age Rating:</strong> <%= anime.attributes.ageRating %></p>
-        <p><strong>Age Rating Guide:</strong> <%= anime.attributes.ageRatingGuide %></p>
-        <img src="<%= anime.attributes.posterImage.original %>" alt="Poster Image">
-        <p><%= anime.attributes.synopsis %></p>
-      </div>
-    <% }); %>
-  <% } else { %>
-    <p>No anime data available.</p>
-  <% } %>
-
   <%- include('footer') %>
-  
 </body>
 </html>

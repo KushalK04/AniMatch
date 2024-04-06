@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "Hexaframe CF";
+    src: url("/fonts/HexaframeCF-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+  
+footer {
+    color: #1d1d1d;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  footer p {
+    margin: 0; 
+    font-size: 1rem; 
+    font-family: 'DM Sans', sans-serif;
+  }

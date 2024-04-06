@@ -4,141 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/styles.css">
-  <style>
-
-    *{
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background-color: white;
-      color: black;
-      font-family: Arial, sans-serif;
-      height: 100vh;
-    }
-
-    h1{
-      font-size: 64px;
-    }
-
-    h2{
-      font-size: 48;
-    }
-
-    h3{
-      font-size: 32px;
-    }
-
-    p{
-      font-size: 18px;
-    }
-
-    label{
-      font-weight: 600;
-    }
-
-    input{
-      padding: 10px;
-    }
-
-    form{
-      margin-bottom: 2rem;
-    }
-
-    .login-button {
-      color: #000;
-      text-align: center;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 24px;
-      border-radius: 6px;
-      background: #FFF;
-      display: flex;
-      padding: 8px 20px;
-      justify-content: center;
-      align-items: center;
-      gap: 2px;
-      border: 1px solid #000;
-    }
-
-    .register-button {
-      color: #FFF;
-      text-align: center;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 24px;
-      border-radius: 6px;
-      background: #000;
-      display: flex;
-      padding: 8px 20px;
-      justify-content: center;
-      align-items: center;
-      gap: 2px;
-      border: none;
-    }
-
-    .inputs {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      text-align: left;
-      margin-bottom: 20px;
-    } 
-
-    .container {
-      display: flex;
-      width: 300px;
-      flex-direction: column;
-      padding: 2rem;
-      border-radius: 10px;
-      border: 1px solid #39393A;
-    }
-
-
-    .buttons {
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-    }
-
-    .heading {
-      margin-bottom: 2rem;
-    }
-
-  </style>
-
+  <link rel="stylesheet" href="/css/register.css">
   <title>Register</title>
 </head>
 <body>
   <div class="main">
-    <h1 class="heading" >Register</h1>
+    <h1 class="heading">Register</h1>
     <div class="container">
-
       <form action="/register" method="POST">
         <div class="inputs">
           <label for="email">Email</label>
-          <input type="email" name="username">
+          <input type="email" name="username" id="email">
         </div>
         <div class="inputs">
           <label for="password">Password</label>
-          <input type="password" name="password">
+          <input type="password" name="password" id="password">
         </div>
         <div class="buttons">
           <button class="register-button" type="submit">Register</button>
         </div>
       </form>
-        <% if (error) { %>
-          <p><%= error %></p>
-        <% } %>
+      <% if (error) { %>
+        <p><%= error %></p>
+      <% } %>
       <button class="login-button" onclick="window.location.href='/'">Login Instead</button>
-      
     </div>
   </div>
 </body>

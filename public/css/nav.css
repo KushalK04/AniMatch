@@ -1,0 +1,85 @@
+@font-face {
+    font-family: "Hexaframe CF";
+    src: url("/fonts/HexaframeCF-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+  
+  body {
+      margin: 0;
+      font-family: 'DM Sans', sans-serif;
+  }
+    
+  nav {
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 20px 48px;
+    justify-content: space-between; 
+  }
+  
+  nav .nav-container {
+    display: flex;
+    width: 100%; 
+    align-items: center; 
+  }
+  
+  nav .logo,
+  nav .nav-links,
+  nav .nav-buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav .nav-links {
+    flex-grow: 1;
+  }
+  
+  nav .nav-links ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav .nav-links ul li {
+    padding: 0 4rem;
+  }
+  
+  nav .nav-links ul li a {
+    color: #1D1D1D;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  
+  nav .nav-links ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  nav .nav-links ul li a.active {
+    color: #1D1D1D;
+  }
+  
+  nav .nav-buttons a.button {
+    text-decoration: none;
+    background-color: #1D1D1D;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  
+  nav .nav-buttons a.button:hover {
+    background-color: #272727;
+    text-decoration: none;
+  }
+  

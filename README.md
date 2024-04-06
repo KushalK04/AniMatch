@@ -21,4 +21,4 @@ Patrick Hui
 - Then open pg admin and in a server under databases, then schemas, and under public you’ll see tables
 - Right click and make a table called users
 - In the query tab add the two lines of code SELECT * FROM public.users and ORDER BY id ASC and save
-- Then go back to the terminal and do node index.js
+- Then go back to the terminal and run the command "node index.js".
